@@ -1,0 +1,47 @@
+.single-card{
+    width: 100vw;
+    height: fit-content;
+    padding: 20px;
+    margin-top: 30px;
+}
+.single-card-detail{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.image{
+    width: 40%;
+    height: 100%;
+}
+.image img{
+    width:100%;
+    height: 100%;
+    object-fit: contain;
+}
+.description{
+    text-align: center;
+    padding: 10px;
+}
+.description > h5{
+    font-size: 1.8rem;
+}
+.description >article{
+    text-align:start;
+    margin: 10px 0;
+}
+.description > article > p {
+    font-size: 17px;
+    line-height: 1.56;
+}
+.description > article > p > strong{
+    font-size: 18px;
+    margin-right: 5px;
+}
+.description > article > p > strong > span{
+    font-size: 24px;
+    margin-right: 5px;
+    color: rgb(60, 60, 199);
+}

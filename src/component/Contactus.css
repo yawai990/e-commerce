@@ -1,0 +1,102 @@
+.contact-us{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-container{
+    width: 50vw;
+    margin:0 auto;
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 2rem;
+}
+.contact-title{
+    font-size: 1.4rem;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+/* form{
+    border: 1px solid salmon;
+} */
+form .form-control{
+    margin: 10px 0;
+}
+.form-control label{
+    display: block;
+    margin: 4px 0;
+    font-weight: 500;
+}
+.form-control input,.form-control textarea{
+    width: 100%;
+    display: block;
+    padding: 7px 10px;
+    font-size: 17px;
+    border-radius: 4px;
+    border: 1px solid rgb(35,35,35);
+}
+.send-btn{
+    display: block;
+    padding: 10px 30px;
+    background-color: rgb(5, 101, 197);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fdfdfd;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.footer{
+    width: 100vw;
+    height: 40vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.upper-footer{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+.contact-us-footer > h4,.social > h4{
+    font-size: 1.4rem;
+    font-weight: 450;
+}
+.contact-footer,.socail-icons{
+    list-style-type:none;
+    margin-top: 20px;
+}
+.contact-footer > li,.socail-icons > li{
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 400;
+}
+.contact-footer > li > a,.socail-icons > li > a{
+    text-decoration: none;
+    color: rgb(32,32,32);
+}
+.contact-footer > li  a:hover,
+.socail-icons > li  a:hover{
+    color: dodgerblue;
+}
+.copy-right{
+    height: 10vh;
+    text-align: center;
+    line-height: 10vh;
+    border-top: 1px solid rgb(224, 224, 224);
+}
+.copy-right small{
+    letter-spacing: 1px;
+}
+.copy-right small a{
+    text-decoration: none;
+    color: dodgerblue;
+}
