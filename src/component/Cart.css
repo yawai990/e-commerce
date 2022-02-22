@@ -42,7 +42,7 @@ th,td{
     font-size: 20px;
     margin: 0 5px;
 }
-.qty-container .btn{
+.qty-container .btn,.single-delete-btn{
     border: none;
     background-color: transparent;
     display: flex;
@@ -56,6 +56,10 @@ th,td{
 }
 .qty-container .increase-btn{
     color: rgb(95, 95, 255);
+}
+.single-delete-btn{
+    font-size: 1.7rem;
+    color: rgb(255, 37, 37);
 }
 .remind{
     width: 60%;

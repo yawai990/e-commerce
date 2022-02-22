@@ -27,20 +27,23 @@ export const MyAppContext = ({ children }) => {
         setTimeout(() => {
             getItems()
             setLoading(false)
-        }, 2000);
+        }, 1000);
     }, [])
 
     //adding the items to the cart
     const pushItem = (id) => {
-        const addToreducer = items.filter(item => item.id === id)
-
+        //check the id is exist or not 
+        const addToreducer = !newItems.map(item => item.id === id)[0] ? items.filter(item => item.id === id) : ''
         //this filter the iterable things
-        const buyingCartItems = [...new Set([...newItems, ...addToreducer])].map(buyingItem => {
+        const buyingCartItems = [...newItems, ...addToreducer].map(buyingItem => {
             return { ...buyingItem, amount: 1 };
         })
         setNewItems(buyingCartItems);
     }
-
+    const itemRemove = (id) => {
+        const itemdelete = newItems.filter(item => item.id !== id)
+        setNewItems(itemdelete)
+    }
 
     return <AppContext.Provider value={
         {
@@ -50,7 +53,8 @@ export const MyAppContext = ({ children }) => {
             setItems,
             pushItem, newItems,
             ttamount,
-            setttamount
+            setttamount,
+            itemRemove
         }
     }>
         {children}

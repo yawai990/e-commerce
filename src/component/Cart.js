@@ -6,7 +6,7 @@ import { reducer } from '../Reducer';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const { newItems, setttamount } = useGlobalContext()
+    const { newItems, itemRemove, setttamount } = useGlobalContext();
 
     let initState = {
         cartItems: newItems,
@@ -25,6 +25,12 @@ const Cart = () => {
         dispatch({ type: 'DECREASE', decreItem: id })
     }
 
+    const onhandleClick = (id) => {
+        itemRemove(id)
+        dispatch({ type: 'REMOVE', removeId: id })
+    }
+
+
     const { tamount, ttotal } = cartItems.reduce((prevval, curval) => {
         const { price, amount } = curval;
 
@@ -39,13 +45,12 @@ const Cart = () => {
         tamount: 0,
         ttotal: 0
     })
-
     // console.log(tamount, ttotal);
     const t = ttotal.toFixed(2);
 
     useEffect(() => {
         setttamount(tamount)
-    }, [])
+    }, [state])
 
     return (cartItems.length > 0 ? <div className="cart-container">
         <table>
@@ -56,6 +61,7 @@ const Cart = () => {
                     <th className='product-price'>Price</th>
                     <th className='product-qty'>Quantity</th>
                     <th className='product-amount'>Amount</th>
+                    <th className='product-delete'></th>
                 </tr>
             </thead>
             <tbody>
@@ -88,6 +94,11 @@ const Cart = () => {
                             </div>
                         </td>
                         <td className="product-qty">{singleTotalAmount}</td>
+                        <td className="product-delete">
+                            <button className="single-delete-btn" onClick={() => onhandleClick(id)}>
+                                <Icon icon="bi:x-circle-fill" />
+                            </button>
+                        </td>
                     </tr>
                 })}
             </tbody>
