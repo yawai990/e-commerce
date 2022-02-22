@@ -9,6 +9,8 @@ export default function Navbar() {
     return <nav className="navigation">
         <div className="navbar-brand">
             <img src="https://pro1globalhomecenter.com/wp-content/uploads/2020/04/cropped-PRO-1-Global-Logo-512x172-RGB.png" alt="" />
+
+            <h4>Navbar</h4>
         </div>
 
         <ul>
