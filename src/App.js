@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import useGlobalContext from './Context';
+import { Routes, Route } from "react-router-dom";
 
 //components
 import Navbar from './component/Navbar';
@@ -12,7 +11,7 @@ import Cart from './component/Cart';
 import Order from './component/Order';
 
 function App() {
-  // console.log(useGlobalContext());
+
   return (
     <div className="App">
       <Navbar />

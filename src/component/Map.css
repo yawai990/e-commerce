@@ -1,0 +1,8 @@
+.map{
+    width: 400px;
+    height: 300px;
+}
+.location-marker{
+    font-size: 2rem;
+    color: rgb(255, 53, 53);
+}

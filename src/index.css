@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 code {
@@ -15,13 +15,14 @@ code {
 .navigation{
   width: 100vw;
   height: 10vh;
-  background-color: rgb(250, 255, 255);
+  background-color: rgba(250, 255, 255, 0.733);
+  backdrop-filter: blur(5px);
   display:flex;
   justify-content: space-around;
   align-items: center;
   position: sticky;
   top: 0;
-
+  z-index: 10;
 }
 .navbar-brand img{
   height: 40px;
@@ -33,10 +34,9 @@ ul .nav-item{
   margin: 0 10px;
   font-size: 17px;
   letter-spacing: 0.5px;
-  color: black;
 }
 .App{
-  background-color: rgb(206, 206, 206);
+  background-color: rgba(250, 255, 255, 0.733);
   min-height: 100vh;
 }
 .cart{
@@ -52,7 +52,6 @@ ul .nav-item{
   top: -40%;
   right: 0;
   border-radius: 50%;
-  color: white;
   transform: translate(50%,50%);
   display: flex;
   justify-content: center;
@@ -60,7 +59,6 @@ ul .nav-item{
 }
 .cart-icon{
   font-size: 2.5rem;
-  color: white;
 }
 .about{
   width: 80%;

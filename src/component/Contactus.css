@@ -8,7 +8,7 @@
     width: 50vw;
     margin:0 auto;
     margin-top: 40px;
-    background-color: white;
+    background-color: rgb(172, 172, 172);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 2rem;
@@ -19,9 +19,6 @@
     letter-spacing: 1px;
     font-weight: 500;
 }
-/* form{
-    border: 1px solid salmon;
-} */
 form .form-control{
     margin: 10px 0;
 }
@@ -52,21 +49,27 @@ form .form-control{
 }
 .footer{
     width: 100vw;
-    height: 40vh;
-    background-color: white;
+    height: fit-content;
+    background-color: rgb(75, 75, 75);
+    color: #fcfcfc;
     display: flex;
     flex-direction: column;
+    border-bottom-right-radius: 15%;
+    border-bottom-left-radius: 15%;
     justify-content: space-between;
 }
 .upper-footer{
     width: 100vw;
     display: flex;
-    justify-content: space-around;
-    padding-top: 40px;
+    justify-content: space-between;
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(221, 221, 221);
 }
-.contact-us-footer > h4,.social > h4{
+.logo{
+    margin-left: 30px;
+}
+.logo > h4,.contact-us-footer > h4,.social > h4{
+    padding-top: 40px;
     font-size: 1.4rem;
     font-weight: 450;
 }
@@ -81,7 +84,7 @@ form .form-control{
 }
 .contact-footer > li > a,.socail-icons > li > a{
     text-decoration: none;
-    color: rgb(32,32,32);
+    color: #c0c0c0;
 }
 .contact-footer > li  a:hover,
 .socail-icons > li  a:hover{

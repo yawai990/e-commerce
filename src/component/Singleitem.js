@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useGlobalContext from "../Context";
 import './Single.css';
 
@@ -14,6 +14,7 @@ const SingleItem = () => {
         if (item.id === changeInt) {
             return item;
         }
+        return item
     })
 
     return (

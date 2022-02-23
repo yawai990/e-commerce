@@ -29,4 +29,11 @@ export const reducer = (state, action) => {
         })
         return { ...state, cartItems: dec }
     }
+    if (action.type === 'ORDER') {
+        return {
+            cartItems: [],
+            Totalqty: 0,
+            Totalamount: 0
+        }
+    }
 }

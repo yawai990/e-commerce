@@ -24,12 +24,15 @@ export const MyAppContext = ({ children }) => {
 
     }
     useEffect(() => {
+
         setTimeout(() => {
             getItems()
             setLoading(false)
         }, 1000);
     }, [])
 
+
+    //**new to fix the pushing item that existing or not inside the cartItems when we clicked the add to cart btn the bug come out */
     //adding the items to the cart
     const pushItem = (id) => {
         //check the id is exist or not 
@@ -40,6 +43,11 @@ export const MyAppContext = ({ children }) => {
         })
         setNewItems(buyingCartItems);
     }
+
+    const onOrderClick = () => {
+        setNewItems([])
+    }
+
     const itemRemove = (id) => {
         const itemdelete = newItems.filter(item => item.id !== id)
         setNewItems(itemdelete)
@@ -54,7 +62,8 @@ export const MyAppContext = ({ children }) => {
             pushItem, newItems,
             ttamount,
             setttamount,
-            itemRemove
+            itemRemove,
+            onOrderClick
         }
     }>
         {children}

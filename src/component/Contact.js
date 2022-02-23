@@ -1,6 +1,6 @@
 import './Contactus.css';
 import { Icon } from '@iconify/react';
-import { Link } from 'react-router-dom';
+import { Map } from './Map';
 
 export default function Contact() {
     return <div className="contact-us">
@@ -41,10 +41,11 @@ export default function Contact() {
         </section>
 
         <section className="footer">
-
             <div className="upper-footer">
+
                 <div className="logo">
-                    <h5>Shoppy</h5>
+                    <h4>Shoppy</h4>
+
                 </div>
 
                 <article className="contact-us-footer">
@@ -102,6 +103,8 @@ export default function Contact() {
                     </ul>
 
                 </article>
+
+                <Map />
             </div>
 
             <div className="copy-right">

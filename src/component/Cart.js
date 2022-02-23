@@ -1,12 +1,12 @@
 import './Cart.css';
-import React, { useEffect, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import useGlobalContext from '../Context';
 import { Icon } from '@iconify/react';
 import { reducer } from '../Reducer';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const { newItems, itemRemove, setttamount } = useGlobalContext();
+    const { newItems, itemRemove, onOrderClick } = useGlobalContext();
 
     let initState = {
         cartItems: newItems,
@@ -31,6 +31,7 @@ const Cart = () => {
     }
 
 
+
     const { tamount, ttotal } = cartItems.reduce((prevval, curval) => {
         const { price, amount } = curval;
 
@@ -45,12 +46,12 @@ const Cart = () => {
         tamount: 0,
         ttotal: 0
     })
-    // console.log(tamount, ttotal);
+    console.log(tamount);
     const t = ttotal.toFixed(2);
 
-    useEffect(() => {
-        setttamount(tamount)
-    }, [state])
+    // useEffect(() => {
+    //     setttamount(tamount)
+    // }, [state])
 
     return (cartItems.length > 0 ? <div className="cart-container">
         <table>
@@ -110,8 +111,10 @@ const Cart = () => {
             </tfoot>
         </table>
 
-        <button className="order">
-            <Link to='/order' className="order-btn">Order Now</Link>
+        <button className="order" onClick={onOrderClick}>
+            <Link to='/order' className="order-btn">
+                Order Now
+            </Link>
         </button>
     </div>
         : <div className="cart-container">

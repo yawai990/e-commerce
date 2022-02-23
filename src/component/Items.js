@@ -1,9 +1,10 @@
-import './item.css';
+import { useState, useRef, useEffect } from 'react';
 import useGlobalContext from '../Context';
-import Loading from './Loading';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
-import { useState, useRef, useEffect } from 'react';
+import './item.css';
+import Loading from './Loading';
+import Carousel from './carousel/Carousel';
 
 export default function Items() {
     const { loading, pushItem, items } = useGlobalContext();
@@ -18,11 +19,16 @@ export default function Items() {
 
 
     const filter = (category) => {
-        const fil = items.filter(item => item.category === category)
-        if (category === 'all') {
-            return setfilterItem(items)
-        }
-        setfilterItem(fil);
+        setItemLoading(true)
+        setTimeout(() => {
+
+            const fil = items.filter(item => item.category === category)
+            if (category === 'all') {
+                return setfilterItem(items)
+            }
+            setfilterItem(fil);
+            setItemLoading(false)
+        }, 2000)
     }
 
     const describeItem = filterItem.map(item => {
@@ -80,6 +86,8 @@ export default function Items() {
 
     return <div className="items-container">
 
+        <Carousel />
+
         {loading ? <Loading /> : <div className="row items-wrapper">
             <div className="filter">
                 <div className="search">
@@ -113,7 +121,6 @@ export default function Items() {
                 </div>
 
             </div>
-
 
             {!itemLoading ? <div className="items">
                 {describeItem}
