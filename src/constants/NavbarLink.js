@@ -43,3 +43,26 @@ export const socialLinks = [
         link: 'www.youtube.com'
     }
 ]
+
+export const CatergoryButton = [
+    {
+        id: 1,
+        category: 'all',
+        text: 'All'
+    },
+    {
+        id: 2,
+        category: 'men\'s clothing',
+        text: 'Men'
+    },
+    {
+        id: 3,
+        category: 'women\'s clothing',
+        text: 'Women'
+    },
+    {
+        id: 4,
+        category: 'jewelery',
+        text: 'Jewelery'
+    },
+]

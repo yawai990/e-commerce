@@ -6,10 +6,11 @@ import './item.css';
 import Loading from './Loading';
 import Carousel from './carousel/Carousel';
 
-export default function Items() {
+export default function Items({ CatergoryButton }) {
     const { loading, pushItem, items } = useGlobalContext();
     const [filterItem, setfilterItem] = useState(items);
     const [itemLoading, setItemLoading] = useState(false);
+    let [index, setIndex] = useState(1)
     const text = useRef(null);
     let search;
 
@@ -84,6 +85,11 @@ export default function Items() {
         text.current.value = ''
     }
 
+    const onCateBtnClick = (id, category) => {
+        setIndex(id)
+        filter(category)
+    }
+
     return <div className="items-container">
 
         <Carousel />
@@ -99,7 +105,6 @@ export default function Items() {
                             <button className='item-search-btn'
                                 onClick={onhandleClick}>
                                 <Icon icon="akar-icons:search" className='item-search-icon' />
-
                             </button>
                         </div>
                     </form>
@@ -108,15 +113,13 @@ export default function Items() {
                 <div className="category-filter-box">
                     <h5>Category</h5>
                     <ul className="btn-group">
-                        <li>
-                            <button className='category-btn active' onClick={() => filter('all')}>ALL</button>
-                        </li>
-                        <li>
-                            <button className='category-btn' onClick={() => filter("men's clothing")}>Men</button>
-                        </li>
-                        <li>
-                            <button className='category-btn' onClick={() => filter("women's clothing")}>Women</button>
-                        </li>
+                        {CatergoryButton.map(cater => {
+                            const { id, category, text } = cater;
+                            return <li key={id}>
+                                <button className={index === id ? 'category-btn active' : 'category-btn'}
+                                    onClick={() => onCateBtnClick(id, category)}>{text}</button>
+                            </li>
+                        })}
                     </ul>
                 </div>
 

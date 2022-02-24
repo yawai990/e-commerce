@@ -93,3 +93,8 @@ ul .nav-item{
     margin-right: 40px;
   }
 }
+@media screen and (max-width:500px) {
+  .menu-btn{
+    margin-right: 10px;
+  }
+}
