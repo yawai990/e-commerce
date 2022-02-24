@@ -2,7 +2,7 @@ import './Contactus.css';
 import { Icon } from '@iconify/react';
 import { Map } from './Map';
 
-export default function Contact() {
+export default function Contact({ social }) {
     return <div className="contact-us">
 
         <section className="form-container">
@@ -77,29 +77,17 @@ export default function Contact() {
 
                     <h4>Follow Us On</h4>
 
-                    <ul className="socail-icons">
-                        <li>
-                            <a href="https://www.facebook.com/pro1homecenter/" target="_blank">
-                                <Icon icon="akar-icons:facebook-fill" />
-                                <span>Navbar Myanmar</span>
-                            </a>
-                        </li>
+                    <ul className="social-icons">
 
-                        <li>
-                            <a href="www.facebook.com">
-                                <Icon icon="ant-design:instagram-filled" />
-                                <span>@Navbar Myanmar</span>
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a href="www.facebook.com">
-                                <Icon icon="fa:youtube" />
-                                <span>Navbar Myanmar</span>
-                            </a>
-                        </li>
-
+                        {social.map(so => {
+                            const { id, icon, link, text, forSocial } = so;
+                            return <li key={id}>
+                                <a href={link} target={'_blank'}>
+                                    <Icon icon={icon} className={`social-icon ${forSocial}`} />
+                                    <span>{text}</span>
+                                </a>
+                            </li>
+                        })}
                     </ul>
 
                 </article>

@@ -61,7 +61,7 @@ const Cart = () => {
                     <th className='product-name'>Product Name</th>
                     <th className='product-price'>Price</th>
                     <th className='product-qty'>Quantity</th>
-                    <th className='product-amount'>Amount</th>
+                    <th className='product-amount'>Amount(US $)</th>
                     <th className='product-delete'></th>
                 </tr>
             </thead>
@@ -97,7 +97,7 @@ const Cart = () => {
                         <td className="product-qty">{singleTotalAmount}</td>
                         <td className="product-delete">
                             <button className="single-delete-btn" onClick={() => onhandleClick(id)}>
-                                <Icon icon="bi:x-circle-fill" />
+                                <Icon icon="bi:x-circle-fill" className='single-delete-icon' />
                             </button>
                         </td>
                     </tr>

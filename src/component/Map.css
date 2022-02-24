@@ -6,3 +6,16 @@
     font-size: 2rem;
     color: rgb(255, 53, 53);
 }
+@media screen and (max-width:768px) {
+    .map{
+        width: 45%;
+        margin-right: 30px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width:500px) {
+    .map{
+        width: 90%;
+        margin: 10px auto;
+    }
+}

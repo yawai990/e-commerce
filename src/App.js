@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 
 //components
@@ -9,20 +9,31 @@ import Contact from './component/Contact';
 import SingleItem from './component/Singleitem';
 import Cart from './component/Cart';
 import Order from './component/Order';
+import { Sidebar } from './component/Sidebar/Sidebar';
+import { Links, socialLinks } from './constants/NavbarLink';
+import { images } from './constants/images';
 
 function App() {
 
+  const [sidebar, setSidebar] = useState(false)
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar setSidebar={setSidebar} />
       <Routes>
         <Route path='/' element={<Items />} />
         <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<Contact social={socialLinks} />} />
         <Route path='/singleitem/:id' element={<SingleItem />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/order' element={<Order />} />
       </Routes>
+
+      {sidebar && <Sidebar navbarLink={Links}
+        social={socialLinks}
+        images={images}
+        setSidebar={setSidebar} />}
+
     </div>
 
   );

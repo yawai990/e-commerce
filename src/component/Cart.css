@@ -22,7 +22,7 @@ tbody tr:nth-child(even){
 }
 th,td{
     /* background-color: darkred; */
-    border: 1px solid rgb(255, 223, 223);
+    border: 1px solid #a5a5a5;
     padding: 10px;
 }
 .product-thumbnail{
@@ -60,6 +60,8 @@ th,td{
 .single-delete-btn{
     font-size: 1.7rem;
     color: rgb(255, 37, 37);
+    display: block;
+    margin: auto;
 }
 .remind{
     width: 60%;

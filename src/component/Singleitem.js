@@ -14,7 +14,7 @@ const SingleItem = () => {
         if (item.id === changeInt) {
             return item;
         }
-        return item
+
     })
 
     return (
@@ -23,7 +23,7 @@ const SingleItem = () => {
                 const { id, title, category, price, rating, description, image } = sin;
 
                 return <div className="single-card-detail" key={id}>
-                    <div className="image">
+                    <div className="single-card-image">
 
                         <img src={image} alt="item-image" />
                     </div>

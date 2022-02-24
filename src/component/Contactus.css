@@ -61,6 +61,7 @@ form .form-control{
 .upper-footer{
     width: 100vw;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(221, 221, 221);
@@ -73,21 +74,39 @@ form .form-control{
     font-size: 1.4rem;
     font-weight: 450;
 }
-.contact-footer,.socail-icons{
+.contact-footer,.social-icons{
     list-style-type:none;
     margin-top: 20px;
 }
-.contact-footer > li,.socail-icons > li{
+.contact-footer > li,.social-icons > li{
     margin: 10px 0;
     font-size: 15px;
     font-weight: 400;
 }
-.contact-footer > li > a,.socail-icons > li > a{
+.contact-footer > li > a,.social-icons > li > a{
     text-decoration: none;
     color: #c0c0c0;
 }
+.social-icons li a .social-icon{
+    font-size: 1.2rem;
+}
+.social-icon.facebook{
+    color: #405DE6;
+    background-color: white;
+    border-radius: 50%;
+}
+.social-icon.instagram{
+    color: #ff3c3c;
+}
+.social-icon.youtube{
+    color: #FFFFFF;
+    background-color: #C13584;
+}
+.social-icons > li > a > span{
+    margin: 0 10px;
+}
 .contact-footer > li  a:hover,
-.socail-icons > li  a:hover{
+.social-icons > li  a:hover{
     color: dodgerblue;
 }
 .copy-right{
@@ -102,4 +121,23 @@ form .form-control{
 .copy-right small a{
     text-decoration: none;
     color: dodgerblue;
+}
+@media screen and (max-width:768px) {
+    .form-container{
+        width: 80vw;
+    }
+    .logo,.contact-us-footer,.social{
+        width: 45%;
+    }
+    .social{
+        margin-left: 30px;
+    }
+}
+@media screen and (max-width:500px) {
+    .logo,.contact-us-footer,.social{
+        width: 80%;
+    }
+    .social,.contact-us-footer,.map{
+        margin-left: 30px;
+    }
 }

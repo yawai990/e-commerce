@@ -1,0 +1,77 @@
+.sidebar-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(83, 83, 83, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 12;
+}
+.sidebar{
+    width: 30%;
+    min-height:100vh;
+    background-color: rgb(243, 243, 243);
+    position: absolute;
+    right: 0;
+}
+.sidebar-header{
+    display: flex;
+    margin-top: 10px;
+}
+.sidebar-logo{
+    flex:1;
+}
+.sidebar-logo h4{
+    font-size: 2rem;
+}
+.sidebar-close-btn{
+    display: block;
+    border: none;
+    background-color: transparent;
+    font-size: 2em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar-links{
+    padding: 0 20px;
+    margin-top: 2rem;
+}
+.sidebar-nav-item{
+    /* background-color: #051367; */
+    display: block;
+    width: 120px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #051367;
+    font-size: 1.2rem;
+}
+
+.sidebar-nav-item > span{
+    margin-left: 8px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.sidebar-social{
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+    border-top: 1px solid rgb(107, 107, 107);
+    box-shadow: 0 -2px 3px rgb(133, 133, 133);
+    padding-top: 10px;
+    text-align: center;
+}
+.sidebar-social a{      
+    margin: 0 10px;
+    font-size: 1.8em;
+    color: rgb(5, 121, 255);
+}
+
+@media screen and (max-width:768px) {
+    .sidebar{
+        width: 50vw;
+    }
+}

@@ -2,19 +2,20 @@ import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import useGlobalContext from "../Context";
 import { useState } from "react";
+import { images } from '../constants/images';
 
-export default function Navbar() {
+export default function Navbar({ setSidebar }) {
     const [navTheme, setNavtheme] = useState(false);
 
     const Theme = navTheme ? {
-        backgroundColor: 'rgb(9, 132, 255,0.6)', color: '#f4f4f4'
+        backgroundColor: '#474c6d85', color: '#f4f4f4'
     } : {
-        backgroundColor: 'white', color: 'rgb(31, 31, 31)'
+        backgroundColor: '#313552', color: '#EEE6CE'
     };
     const cartTheme = !navTheme ? {
-        backgroundColor: 'rgb(61, 61, 61)', color: '#f4f4f4'
+        backgroundColor: '#f4f4f4', color: '#313552'
     } : {
-        backgroundColor: 'white', color: 'rgb(31, 31, 31)'
+        backgroundColor: '#313552', color: '#f4f4f4'
     };
 
 
@@ -28,12 +29,10 @@ export default function Navbar() {
 
     return <nav className="navigation" style={Theme}>
         <div className="navbar-brand">
-            <img src="https://pro1globalhomecenter.com/wp-content/uploads/2020/04/cropped-PRO-1-Global-Logo-512x172-RGB.png" alt="" />
-
-            <h4>Navbar</h4>
+            <img src={images.logo} alt="" />
         </div>
 
-        <ul>
+        <ul className="nav-links">
             <Link to='/' className="nav-item" style={{ color: `${Theme.color}` }}>Items</Link>
             <Link to='/about' className="nav-item" style={{ color: `${Theme.color}` }}>About</Link>
             <Link to='/contact' className="nav-item" style={{ color: `${Theme.color}` }}>Contact</Link>
@@ -45,5 +44,10 @@ export default function Navbar() {
             </p>
             <Icon icon="emojione:shopping-cart" className="cart-icon" />
         </Link>
+
+        <button className="btn menu-btn" style={{ color: `${Theme.color}` }}
+            onClick={() => setSidebar(true)}>
+            <Icon icon="fa6-solid:bars-staggered" />
+        </button>
     </nav>
 }

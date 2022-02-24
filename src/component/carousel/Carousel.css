@@ -74,3 +74,15 @@
 .carousel-navigation-dot.active{
     background-color: rgb(9, 132, 255);
 }
+@media screen and (max-width:768px) {
+    .carousel-container{
+        width: 95%;
+        height: 60vh;
+    }
+}
+@media screen and (max-width:600px) {
+    .carousel-container{
+        width: 95%;
+        height: 40vh;
+    }
+}
