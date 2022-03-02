@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './item.css';
 import Loading from './Loading';
 import Carousel from './carousel/Carousel';
+import { motion } from 'framer-motion';
 
 export default function Items({ CatergoryButton }) {
     const { loading, pushItem, items } = useGlobalContext();
@@ -18,31 +19,50 @@ export default function Items({ CatergoryButton }) {
         setfilterItem(items)
     }, [items])
 
-
     const filter = (category) => {
+
         setItemLoading(true)
         setTimeout(() => {
 
-            const fil = items.filter(item => item.category === category)
+            const fil = items.filter(item => item.category.includes(category));
+
             if (category === 'all') {
                 return setfilterItem(items)
             }
             setfilterItem(fil);
             setItemLoading(false)
-        }, 2000)
+        }, 500)
     }
 
-    const describeItem = filterItem.map(item => {
+    //for item card animation
+    const container = {
+        hidden: { opacity: 0, y: -20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.5
+            }
+        }
+    }
+    const describeItem = filterItem.length > 0 ? filterItem.map(item => {
 
         const { id, image, price, title } = item;
 
-        return <div className="card" key={id}>
+        return <motion.div className="card" variants={container}
+            initial='hidden' animate='visible' whileInView={{ opacity: [0, 1], y: [-10, 0] }}
+            key={id} transition={{
+                y: { type: 'tween', stiffness: 50 },
+                default: { duration: 0.8 }
+            }}>
 
             <div className="image">
                 <img src={image} alt="" />
             </div>
 
-            <div className="info">
+            <motion.div className="info" whileInView={{ opacity: [0, 1] }}
+                transition={{ delay: 0.5, delayChildren: 4 }}>
                 <p className='title'>{title}</p>
 
                 <p className='price'>US ${price}</p>
@@ -60,10 +80,15 @@ export default function Items({ CatergoryButton }) {
                         view detail
                     </Link>
                 </button>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
 
-    })
+    }) : <p style={{
+        fontSize: '1.2rem',
+        textAlign: 'center',
+        lineHeight: 5
+    }}>
+        Your search item is not available...</p >
 
     const onhandleSubmit = (e) => {
         e.preventDefault()
@@ -84,7 +109,6 @@ export default function Items({ CatergoryButton }) {
         search = text.current.value;
         text.current.value = ''
     }
-
     const onCateBtnClick = (id, category) => {
         setIndex(id)
         filter(category)
@@ -113,11 +137,13 @@ export default function Items({ CatergoryButton }) {
                 <div className="category-filter-box">
                     <h5>Category</h5>
                     <ul className="btn-group">
-                        {CatergoryButton.map(cater => {
+                        {CatergoryButton.map((cater, ind) => {
                             const { id, category, text } = cater;
                             return <li key={id}>
-                                <button className={index === id ? 'category-btn active' : 'category-btn'}
-                                    onClick={() => onCateBtnClick(id, category)}>{text}</button>
+                                <motion.button whileInView={{ opacity: [0, 1] }}
+                                    transition={{ duration: 0.4, delay: (ind * 0.5) }}
+                                    className={index === id ? 'category-btn active' : 'category-btn'}
+                                    onClick={() => onCateBtnClick(id, category)}>{text}</motion.button>
                             </li>
                         })}
                     </ul>

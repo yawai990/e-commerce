@@ -24,11 +24,9 @@ export const MyAppContext = ({ children }) => {
 
     }
     useEffect(() => {
+        getItems()
+        setLoading(false)
 
-        setTimeout(() => {
-            getItems()
-            setLoading(false)
-        }, 1000);
     }, [])
 
 

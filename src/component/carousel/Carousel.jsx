@@ -17,13 +17,13 @@ export default function Carousel() {
         }
     }, [index, Data]);
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setIndex(index + 1)
-        }, 3000);
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //         setIndex(index + 1)
+    //     }, 3000);
 
-        return () => clearInterval(timer)
-    }, [index])
+    // return () => clearInterval(timer)
+    // }, [index])
 
     return <div className="carousel-container"
         onMouseEnter={() => setTheme(true)}
