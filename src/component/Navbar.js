@@ -30,6 +30,13 @@ export default function Navbar({ setSidebar }) {
     return <nav className="navigation" style={Theme}>
         <div className="navbar-brand">
             <img src={images.logo} alt="" />
+
+            <Link to='/cart' className="cart cart__mobile">
+                <p>
+                    <span>{ttamount > 0 ? ttamount : newItems.length}</span>
+                </p>
+                <Icon icon="emojione:shopping-cart" className="cart-icon" />
+            </Link>
         </div>
 
         <ul className="nav-links">

@@ -62,7 +62,7 @@ export const CatergoryButton = [
     },
     {
         id: 4,
-        category: 'jewelery',
-        text: 'Jewelery'
+        category: 'jewellery',
+        text: 'Jewellery'
     },
 ]

@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import './Sidebar.css';
+import useGlobalContext from '../../Context';
 
 export const Sidebar = ({ navbarLink, social, setSidebar }) => {
+    const { newItems, ttamount } = useGlobalContext();
+
     return <div className="sidebar-wrapper" onClick={() => setSidebar(false)}>
         <div className="sidebar">
 
@@ -10,6 +13,7 @@ export const Sidebar = ({ navbarLink, social, setSidebar }) => {
 
                 <div className="sidebar-logo">
                     <h4>Shoppy MM</h4>
+
                 </div>
 
                 <button className="btn sidebar-close-btn" onClick={() => setSidebar(false)}>

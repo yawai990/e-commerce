@@ -29,6 +29,9 @@ code {
   height: fit-content;
   object-fit: cover;
 }
+.cart.cart__mobile{
+  display: none;
+}
 ul .nav-item{
   text-decoration: none;
   padding: 5px 10px;
@@ -84,6 +87,18 @@ ul .nav-item{
   }
   .navbar-brand{
     flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cart.cart__mobile{
+    display: block;
+    margin-right: 1.5rem;
+    font-size: 14px;
+  }
+  .cart.cart__mobile > svg{
+    width:40px;
+    height:40px;
   }
   .nav-links,.cart{
     display: none;
@@ -96,5 +111,12 @@ ul .nav-item{
 @media screen and (max-width:500px) {
   .menu-btn{
     margin-right: 10px;
+  }
+  .cart.cart__mobile > svg{
+    width:25px;
+    height:25px;
+  }
+  .cart.cart__mobile > p{
+    top: -25px;
   }
 }

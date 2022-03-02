@@ -8,7 +8,7 @@
     width: 50vw;
     margin:0 auto;
     margin-top: 40px;
-    background-color: rgb(172, 172, 172);
+    background-color: rgba(122, 159, 189, 0.445);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 2rem;
@@ -33,7 +33,10 @@ form .form-control{
     padding: 7px 10px;
     font-size: 17px;
     border-radius: 4px;
-    border: 1px solid rgb(35,35,35);
+    outline: none;
+    border: none;
+    background-color: #474c6d75;
+    color: #fcfcfc;
 }
 .send-btn{
     display: block;

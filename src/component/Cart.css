@@ -21,7 +21,6 @@ tbody tr:nth-child(even){
     background-color: burlywood;
 }
 th,td{
-    /* background-color: darkred; */
     border: 1px solid #a5a5a5;
     padding: 10px;
 }
@@ -117,4 +116,24 @@ th,td{
     color: white;
     font-size: 1rem;
     text-decoration: none;
+}
+
+@media screen and (max-width:768px){
+    table{
+        width: 90%;
+    }
+    thead{
+        width:100%;
+    }
+}
+
+@media screen and (max-width:500px){
+    thead,tr th,tr td{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        flex-direction: column;
+    }
 }

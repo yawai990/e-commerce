@@ -49,10 +49,6 @@ const Cart = () => {
     console.log(tamount);
     const t = ttotal.toFixed(2);
 
-    // useEffect(() => {
-    //     setttamount(tamount)
-    // }, [state])
-
     return (cartItems.length > 0 ? <div className="cart-container">
         <table>
             <thead>
